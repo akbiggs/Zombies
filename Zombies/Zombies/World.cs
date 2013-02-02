@@ -60,6 +60,7 @@ namespace Zombies
         public virtual void Draw(SpriteBatch spr)
         {
             spr.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.GetTransformation(spr.GraphicsDevice));
+            spr.GraphicsDevice.Clear(Color.Gray);
             foreach (Block block in Blocks)
                 block.Draw(spr);
             foreach (Zombie zombie in Zombies)

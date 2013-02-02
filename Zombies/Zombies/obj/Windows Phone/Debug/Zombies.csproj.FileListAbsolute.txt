@@ -10,3 +10,4 @@ bin\Windows Phone\Debug\
 c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.xap
 c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\XapCacheFile.xml
 c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Pixel.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Zombies.csprojResolveAssemblyReference.cache

@@ -90,7 +90,7 @@ namespace Zombies
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            world.Update();
 
             base.Update(gameTime);
         }
