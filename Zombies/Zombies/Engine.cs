@@ -17,8 +17,18 @@ namespace Zombies
     /// </summary>
     public class Engine : Microsoft.Xna.Framework.Game
     {
+
+        #region Static
+        public static int GameScore = 0;
+        public static Point ScreenResolution;
+        #endregion
+
+        #region Members
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        World world;
+        #endregion
 
         public Engine()
         {
@@ -53,8 +63,11 @@ namespace Zombies
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            ScreenResolution = new Point(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            TextureBin.LoadContent(Content);
+            SoundBin.LoadContent(Content);
 
-            // TODO: use this.Content to load your game content here
+            world = new World(ScreenResolution.X, ScreenResolution.Y);
         }
 
         /// <summary>
@@ -90,7 +103,7 @@ namespace Zombies
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            world.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }
