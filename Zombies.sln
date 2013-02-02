@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zombies", "Zombies\Zombies\Zombies.csproj", "{93B618F8-B261-48F7-B6CE-58800A448F6B}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ZombiesContent", "Zombies\ZombiesContent\ZombiesContent.contentproj", "{4104321B-9A6B-4406-9954-5F5F1A6EB37F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{93B618F8-B261-48F7-B6CE-58800A448F6B}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{4104321B-9A6B-4406-9954-5F5F1A6EB37F}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{4104321B-9A6B-4406-9954-5F5F1A6EB37F}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
