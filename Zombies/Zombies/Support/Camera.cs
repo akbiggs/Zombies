@@ -77,14 +77,14 @@ namespace Zombies
             {
                 // but we might just be centered on a point, so check that we have a target.
                 if (target != null)
-                    position = target.Position;
+                    position = new Vector2(target.Position.X, Engine.ScreenResolution.Y / 2);
             }
             else
             {
                 // to avoid a jarring jump, we need to update the pan position to match up with the
                 // target's position if we have one.
                 if (target != null)
-                    nextPos = target.Position;
+                    nextPos = new Vector2(target.Position.X, Engine.ScreenResolution.Y / 2);
                 position = position.PushTowards(nextPos, PAN_SPEED * Vector2.One);
                 if (position == nextPos)
                     nextPos = Vector2.Zero;

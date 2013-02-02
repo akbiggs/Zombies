@@ -50,7 +50,7 @@ namespace Zombies
         /// <param name="startAnimation">The name of the first animation to play of this object.</param>
         /// <param name="gravitable"></param>
         public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, List<AnimationSet> animations, String startAnimation,
-            bool gravitable)
+            bool gravitable, bool collidesWithTerrain)
         {
             this.world = world;
             this.Position = position;
@@ -59,6 +59,7 @@ namespace Zombies
             this.gravitable = gravitable;
             this.Animations = animations;
             this.CurAnimation = GetAnimationByName(startAnimation);
+            this.CollidesWithTerrain = collidesWithTerrain;
         }
 
         /// <summary>
@@ -69,11 +70,11 @@ namespace Zombies
         /// <param name="velocity">The velocity at which the object is moving initially.</param>
         /// <param name="size">The size of the object.</param>
         /// <param name="texture">The texture of the object.</param>
-        public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, Texture2D texture, bool gravitable)
+        public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, Texture2D texture, bool gravitable, bool collidesWithTerrain)
             : this(world, position, velocity, size, new List<AnimationSet>
             {
                 new AnimationSet("_", texture, 1, texture.Width, 1, false, 0)
-            }, "_", gravitable)
+            }, "_", gravitable, collidesWithTerrain)
         {
         }
 
@@ -181,7 +182,7 @@ namespace Zombies
         /// <param name="spr">The sprite batch of the game.</param>
         public virtual void Draw(SpriteBatch spr)
         {
-            spr.Draw(CurAnimation.GetTexture(), new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y), CurAnimation.GetFrameRect(),
+            spr.Draw(CurAnimation.GetTexture(), new Rectangle((int)(Left - world.Camera.X), (int)Top, (int)Size.X, (int)Size.Y), CurAnimation.GetFrameRect(),
                 Color, 0, Vector2.Zero, SpriteEffects.None, 0);
         }
 

@@ -33,6 +33,7 @@ namespace Zombies
         public Engine()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
 
             // Frame rate is 30 fps by default for Windows Phone.
@@ -50,7 +51,8 @@ namespace Zombies
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            ScreenResolution = new Point(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
 
             base.Initialize();
         }
@@ -63,7 +65,6 @@ namespace Zombies
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ScreenResolution = new Point(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
             TextureBin.LoadContent(Content);
             SoundBin.LoadSounds(Content);
 
@@ -90,6 +91,7 @@ namespace Zombies
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            Input.Update();
             world.Update();
 
             base.Update(gameTime);
