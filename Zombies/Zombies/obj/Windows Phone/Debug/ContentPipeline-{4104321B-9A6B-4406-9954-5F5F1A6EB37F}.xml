@@ -10,6 +10,141 @@
       <Output>c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Pixel.xnb</Output>
       <Time>2013-02-02T03:23:34.3794132-05:00</Time>
     </Item>
+    <Item>
+      <Source>FlyerRed2.png</Source>
+      <Name>FlyerRed2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\FlyerRed2.xnb</Output>
+      <Time>2013-02-02T12:23:08.4658009-05:00</Time>
+    </Item>
+    <Item>
+      <Source>FlyerRed.png</Source>
+      <Name>FlyerRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\FlyerRed.xnb</Output>
+      <Time>2013-02-02T11:35:54.5245783-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Puddle.png</Source>
+      <Name>Puddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Puddle.xnb</Output>
+      <Time>2013-02-02T11:35:54.5255774-05:00</Time>
+    </Item>
+    <Item>
+      <Source>RunGreenHat.png</Source>
+      <Name>RunGreenHat</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\RunGreenHat.xnb</Output>
+      <Time>2013-02-02T11:53:43.2844345-05:00</Time>
+    </Item>
+    <Item>
+      <Source>RunGreen.png</Source>
+      <Name>RunGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\RunGreen.xnb</Output>
+      <Time>2013-02-02T11:35:54.5493948-05:00</Time>
+    </Item>
+    <Item>
+      <Source>VampireHurt.png</Source>
+      <Name>VampireHurt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\VampireHurt.xnb</Output>
+      <Time>2013-02-02T11:35:54.5503939-05:00</Time>
+    </Item>
+    <Item>
+      <Source>VampireRedGood.png</Source>
+      <Name>VampireRedGood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\VampireRedGood.xnb</Output>
+      <Time>2013-02-02T11:35:54.5513944-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Building2.png</Source>
+      <Name>Building2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building2.xnb</Output>
+      <Time>2013-02-02T11:35:58.8243609-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Building3.png</Source>
+      <Name>Building3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building3.xnb</Output>
+      <Time>2013-02-02T11:35:58.8253604-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Building4.png</Source>
+      <Name>Building4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building4.xnb</Output>
+      <Time>2013-02-02T11:35:58.8263613-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Building5.png</Source>
+      <Name>Building5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building5.xnb</Output>
+      <Time>2013-02-02T11:35:58.8283635-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Vampire Red.png</Source>
+      <Name>Vampire Red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Vampire Red.xnb</Output>
+      <Time>2013-02-02T11:57:41.7227059-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ZombieRed.png</Source>
+      <Name>ZombieRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\ZombieRed.xnb</Output>
+      <Time>2013-02-02T11:57:41.7447224-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Zombie.png</Source>
+      <Name>Zombie</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Zombie.xnb</Output>
+      <Time>2013-02-02T12:36:28.9669865-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main.spritefont</Source>
+      <Name>Main</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Main.xnb</Output>
+      <Time>2013-02-02T14:21:08.1112598-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{4104321B-9A6B-4406-9954-5F5F1A6EB37F}</ContentProjectGUID>
@@ -17,10 +152,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\bill\code\Zombies\Zombies\ZombiesContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\bill\code\Zombies\Zombies\Zombies\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Bill\code\Zombies\Zombies\ZombiesContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Bill\code\Zombies\Zombies\Zombies\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

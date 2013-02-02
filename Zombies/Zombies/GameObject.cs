@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zombies.Support;
 
 namespace Zombies
 {
@@ -88,6 +89,7 @@ namespace Zombies
         /// </summary>s
         public virtual void Update()
         {
+            CurAnimation.Update();
             this.Move();
         }
 
@@ -97,7 +99,9 @@ namespace Zombies
         /// </summary>
         protected void Move()
         {
-            if (CollidesWithTerrain)
+            if (Right - world.Camera.X < -Engine.ScreenResolution.X - 200)
+                world.Remove(this);
+            else if (CollidesWithTerrain)
             {
                 float minX = float.NegativeInfinity;
                 float maxX = float.PositiveInfinity;
@@ -193,6 +197,13 @@ namespace Zombies
         public virtual void Damage(int amount)
         {
             Health -= amount;
+            if (Health <= 0)
+                Die();
+        }
+
+        public virtual void Die()
+        {
+            world.Remove(this);
         }
 
         /// <summary>
@@ -217,6 +228,16 @@ namespace Zombies
         private AnimationSet GetAnimationByName(string name)
         {
             return Animations.First(animset => animset.IsCalled(name));
+        }
+
+        public virtual void Explode()
+        {
+            Random particleRandom = new Random();
+            int numParticles = particleRandom.Next(8, 12);
+            for (int i = 0; i < numParticles; i++)
+                world.Particles.BufferAdd(new ShrinkParticle(world, TextureBin.Get("Pixel"), Center,
+                    new Vector2((float)particleRandom.NextDouble() * RandomHelper.RandomSign(), (float)particleRandom.NextDouble() * RandomHelper.RandomSign()) * 5,
+                    particleRandom.Next(25, 40), particleRandom.Next(5, 10)));
         }
     }
 }

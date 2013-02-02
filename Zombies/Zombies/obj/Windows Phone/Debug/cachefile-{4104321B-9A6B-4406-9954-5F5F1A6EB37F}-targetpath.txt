@@ -1,1 +1,16 @@
 Content\Pixel.xnb
+Content\FlyerRed2.xnb
+Content\FlyerRed.xnb
+Content\Puddle.xnb
+Content\RunGreenHat.xnb
+Content\RunGreen.xnb
+Content\VampireHurt.xnb
+Content\VampireRedGood.xnb
+Content\Building2.xnb
+Content\Building3.xnb
+Content\Building4.xnb
+Content\Building5.xnb
+Content\Vampire Red.xnb
+Content\ZombieRed.xnb
+Content\Zombie.xnb
+Content\Main.xnb

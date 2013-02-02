@@ -9,8 +9,11 @@ namespace Zombies
 {
     public static class TextureBin
     {
+        const int NUM_BUILDING_TEXTURES = 5;
         static Dictionary<String, Texture2D> texDic = new Dictionary<string, Texture2D>();
-        static List<String> names = new List<string> { "Pixel" };
+        static Dictionary<String, SpriteFont> fontDic = new Dictionary<string, SpriteFont>();
+        static List<String> names = new List<string> { "Pixel", "Building2", "Building3", "Building4", "Building5", "RunGreenHat", "Zombie", 
+            "FlyerRed2", };
 
         public static void LoadContent(ContentManager cm)
         {
@@ -21,6 +24,12 @@ namespace Zombies
         public static Texture2D Get(String name)
         {
             return texDic[name];
+        }
+
+        public static Texture2D GetRandomBuilding()
+        {
+            Random random = new Random();
+            return texDic["Building" + (random.Next(0, NUM_BUILDING_TEXTURES) + 2).ToString()];
         }
     }
 }

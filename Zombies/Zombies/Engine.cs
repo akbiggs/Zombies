@@ -23,6 +23,7 @@ namespace Zombies
         public static Point ScreenResolution;
         public static bool ShouldReset = false;
         public static PrimitiveBatch PrimitiveBatch;
+        public static bool FirstPlay = true;
         #endregion
 
         #region Members
@@ -101,6 +102,7 @@ namespace Zombies
             {
                 world = new World(ScreenResolution.X, ScreenResolution.Y);
                 ShouldReset = false;
+                FirstPlay = false;
             }
 
             base.Update(gameTime);

@@ -102,9 +102,13 @@ namespace Zombies
             //    prim.AddVertex(collisionEndPoints[1], Color.Red);
             //    prim.AddVertex(world.Player.Center, Color.Red);
             //}
-            prim.AddVertex(new Vector2(endPoints[0].X - world.Camera.X, endPoints[0].Y), Pencil);
-            prim.AddVertex(new Vector2(endPoints[1].X - world.Camera.X, endPoints[1].Y), Pencil);
-            prim.AddVertex(new Vector2(world.Player.Center.X - world.Camera.X, world.Player.Center.Y), Pencil);
+
+            if (world.Player != null)
+            {
+                prim.AddVertex(new Vector2(endPoints[0].X - world.Camera.X, endPoints[0].Y), Pencil);
+                prim.AddVertex(new Vector2(endPoints[1].X - world.Camera.X, endPoints[1].Y), Pencil);
+                prim.AddVertex(new Vector2(world.Player.Center.X - world.Camera.X, world.Player.Center.Y), Pencil);
+            }
             prim.End();
         }
 

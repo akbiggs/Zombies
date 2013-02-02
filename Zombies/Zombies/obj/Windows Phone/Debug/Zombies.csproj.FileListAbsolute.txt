@@ -11,3 +11,18 @@ c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.xap
 c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\XapCacheFile.xml
 c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Pixel.xnb
 C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Zombies.csprojResolveAssemblyReference.cache
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\FlyerRed2.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\FlyerRed.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Puddle.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\RunGreenHat.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\RunGreen.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\VampireHurt.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\VampireRedGood.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building2.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building3.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building4.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Building5.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Vampire Red.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\ZombieRed.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Zombie.xnb
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Main.xnb

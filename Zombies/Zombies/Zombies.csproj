@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="EnemyPattern.cs" />
     <Compile Include="Laser.cs" />
+    <Compile Include="Particle.cs" />
+    <Compile Include="ShrinkParticle.cs" />
     <Compile Include="Support\AnimationSet.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="Support\BufferedList.cs" />
@@ -78,9 +80,11 @@
     <Compile Include="Support\ListHelper.cs" />
     <Compile Include="Support\MathExtra.cs" />
     <Compile Include="Support\PrimitiveBatch.cs" />
+    <Compile Include="Support\RandomHelper.cs" />
     <Compile Include="Support\SoundBin.cs" />
     <Compile Include="Support\TextureBin.cs" />
     <Compile Include="Support\VectorHelper.cs" />
+    <Compile Include="TerrainGenerator.cs" />
     <Compile Include="Vampire.cs" />
     <Compile Include="World.cs" />
     <Compile Include="Zombie.cs" />

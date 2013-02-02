@@ -9,26 +9,31 @@ namespace Zombies
 {
     public class Player : GameObject
     {
-        const float MAX_SPEED_X = 7f;
+        const float MAX_SPEED_X = 12f;
         const float MAX_SPEED_Y = 20f;
 
         const int HEALTH = 3;
-        const float JUMP_SPEED = MAX_SPEED_Y - 5f;
+        const float JUMP_SPEED = MAX_SPEED_Y - 7f;
 
-        const int SIZE_X = 30;
-        const int SIZE_Y = 50;
+        const int SIZE_X = 50;
+        const int SIZE_Y = 100;
 
         public bool CanJump = false;
+        public bool CanDoubleJump = false;
         public bool IsAlive = true;
 
         public Player(World world, Vector2 position)
-            : base(world, position, new Vector2(MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), true, true, HEALTH)
+            : base(world, position, new Vector2(MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), new List<AnimationSet>
+            {
+                new AnimationSet("Run", TextureBin.Get("RunGreenHat"), 5, 16, 2, true, 0),
+            }, "Run", true, true, HEALTH)
         {
 
         }
 
         public override void Update()
         {
+            Velocity.X = MAX_SPEED_X;
             // preventing jumping when player falls off of ledge
             if (Velocity.Y >= 2f)
                 CanJump = false;
@@ -38,11 +43,11 @@ namespace Zombies
             {
                 if (Input.TapPosition.X <= World.PLAYER_CAMERA_OFFSET)
                 {
-                    if (CanJump)
+                    if (CanJump || CanDoubleJump)
                         DoJump();
                 }
                 else
-                    FireGun(Input.TapPosition);
+                    FireGun(new Vector2(Input.TapPosition.X + world.Camera.X, Input.TapPosition.Y));
             }
 
             // kill player if they fall off-screen or get hit by a zombie
@@ -59,12 +64,15 @@ namespace Zombies
         private void DoJump()
         {
             this.Velocity.Y = -JUMP_SPEED;
+            if (!CanJump)
+                CanDoubleJump = false;
             CanJump = false;
         }
 
         protected override void HitFloor()
         {
             CanJump = true;
+            CanDoubleJump = true;
 
             base.HitFloor();
         }
