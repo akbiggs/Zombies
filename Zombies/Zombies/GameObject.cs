@@ -28,10 +28,12 @@ namespace Zombies
         bool gravitable;
 
         // Properties.
+        public int Health;
         protected bool CollidesWithTerrain = true;
         public const float MIN_Y = -64;
 
         // Convience getter and setters.
+        // Note that we do object positions relative to their bottom center -- keep that in mind when drawing.
         public float Left { get { return this.Position.X - this.Size.X / 2; } set { this.Position.X = value + this.Size.X / 2; } }
         public float Right { get { return this.Position.X + this.Size.X / 2; } set { this.Position.X = value - this.Size.X / 2; } }
         public float Top { get { return this.Position.Y - this.Size.Y; } set { this.Position.Y = value + this.Size.Y; } }
@@ -184,6 +186,11 @@ namespace Zombies
         {
             spr.Draw(CurAnimation.GetTexture(), new Rectangle((int)(Left - world.Camera.X), (int)Top, (int)Size.X, (int)Size.Y), CurAnimation.GetFrameRect(),
                 Color, 0, Vector2.Zero, SpriteEffects.None, 0);
+        }
+
+        public virtual void Damage(int amount)
+        {
+
         }
 
         /// <summary>

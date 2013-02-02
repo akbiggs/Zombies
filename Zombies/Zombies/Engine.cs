@@ -22,6 +22,7 @@ namespace Zombies
         public static int GameScore = 0;
         public static Point ScreenResolution;
         public static bool ShouldReset = false;
+        public static PrimitiveBatch PrimitiveBatch;
         #endregion
 
         #region Members
@@ -66,6 +67,7 @@ namespace Zombies
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            PrimitiveBatch = new PrimitiveBatch(GraphicsDevice);
             TextureBin.LoadContent(Content);
             SoundBin.LoadSounds(Content);
 

@@ -9,7 +9,7 @@ namespace Zombies
 {
     public class Player : GameObject
     {
-        const float MAX_SPEED_X = 0f;
+        const float MAX_SPEED_X = 7f;
         const float MAX_SPEED_Y = 20f;
 
         const float JUMP_SPEED = MAX_SPEED_Y - 5f;
@@ -42,7 +42,7 @@ namespace Zombies
             }
 
             // kill player if they fall off-screen or get hit by a zombie
-            if (Top > Engine.ScreenResolution.Y || world.Zombies.Any((zombie) => this.Intersects(zombie)))
+            if (Top > Engine.ScreenResolution.Y || world.Mobs.Any((mob) => this.Intersects(mob)))
                 Die();
 
             base.Update();
@@ -62,9 +62,9 @@ namespace Zombies
             base.HitFloor();
         }
 
-        private void FireGun(Vector2 vector2)
+        private void FireGun(Vector2 firePos)
         {
-            //throw new NotImplementedException();
+            world.Lasers.BufferAdd(new Laser(world, Center, Vector2.Normalize(firePos - Center)));
         }
 
         public override void Draw(SpriteBatch spr)
@@ -75,7 +75,6 @@ namespace Zombies
         public void Die()
         {
             // TODO: Death animation stuff.
-            world.Player = null;
             world.GameOver();
         }
     }
