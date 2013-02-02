@@ -14,6 +14,7 @@ namespace Zombies
         static Dictionary<String, SpriteFont> fontDic = new Dictionary<string, SpriteFont>();
         static List<String> names = new List<string> { "Pixel", "Building2", "Building3", "Building4", "Building5", "RunGreenHat", "Zombie", 
             "FlyerRed2", };
+        static List<String> fontNames = new List<String> { "Main" }
 
         public static void LoadContent(ContentManager cm)
         {

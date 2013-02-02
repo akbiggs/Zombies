@@ -69,6 +69,7 @@
     <Compile Include="Laser.cs" />
     <Compile Include="Particle.cs" />
     <Compile Include="ShrinkParticle.cs" />
+    <Compile Include="SuperZombie.cs" />
     <Compile Include="Support\AnimationSet.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="Support\BufferedList.cs" />

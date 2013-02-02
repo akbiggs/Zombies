@@ -15,7 +15,7 @@ namespace Zombies
         /// <summary>
         /// The thickness of the laser in pixels.
         /// </summary>
-        const int THICKNESS = 100;
+        const int THICKNESS = 65;
         const int DAMAGE_RADIUS_AROUND_PLAYER = 75;
         const int LASER_SPEED = 1000;
         const int LASER_DAMAGE = 1;

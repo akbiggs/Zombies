@@ -236,8 +236,8 @@ namespace Zombies
             int numParticles = particleRandom.Next(8, 12);
             for (int i = 0; i < numParticles; i++)
                 world.Particles.BufferAdd(new ShrinkParticle(world, TextureBin.Get("Pixel"), Center,
-                    new Vector2((float)particleRandom.NextDouble() * RandomHelper.RandomSign(), (float)particleRandom.NextDouble() * RandomHelper.RandomSign()) * 5,
-                    particleRandom.Next(25, 40), particleRandom.Next(5, 10)));
+                    new Vector2((float)particleRandom.NextDouble() * 4 * RandomHelper.RandomSign(), (float)particleRandom.NextDouble() * RandomHelper.RandomSign()) * 5,
+                    particleRandom.Next(10, 25), particleRandom.Next(10, 20)));
         }
     }
 }

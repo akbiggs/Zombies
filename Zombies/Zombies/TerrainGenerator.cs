@@ -59,7 +59,7 @@ namespace Zombies
                     {
                         world.Blocks.BufferAdd(new Block(world, new Vector2(50 + startX + i * 225, Engine.ScreenResolution.Y),
                             new Vector2(200, 100 * (i+1))));
-                        world.Zombies.BufferAdd(new Zombie(world, new Vector2(25 + startX + i * 80, Engine.ScreenResolution.Y - (100 * (i + 1)))));
+                        world.Zombies.BufferAdd(new Zombie(world, new Vector2(25 + startX + i * 200, Engine.ScreenResolution.Y - (200 * (i + 1)))));
                     }
                     NextX += 800;
                     break;
