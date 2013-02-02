@@ -18,7 +18,7 @@ namespace Zombies
         {
             base.Update();
 
-            if (world.Player.Position.X - Right > Engine.ScreenResolution.X / 2)
+            if (!world.Failed && world.Player.Position.X - Right > Engine.ScreenResolution.X / 2)
                 world.Blocks.BufferRemove(this);
         }
     }

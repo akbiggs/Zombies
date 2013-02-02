@@ -11,3 +11,9 @@ c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.xap
 c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\XapCacheFile.xml
 c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Pixel.xnb
 C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Zombies.csprojResolveAssemblyReference.cache
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.xap
+C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\Bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\Bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\

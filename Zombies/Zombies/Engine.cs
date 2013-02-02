@@ -21,6 +21,7 @@ namespace Zombies
         #region Static
         public static int GameScore = 0;
         public static Point ScreenResolution;
+        public static bool ShouldReset = false;
         #endregion
 
         #region Members
@@ -93,6 +94,12 @@ namespace Zombies
 
             Input.Update();
             world.Update();
+
+            if (ShouldReset)
+            {
+                world = new World(ScreenResolution.X, ScreenResolution.Y);
+                ShouldReset = false;
+            }
 
             base.Update(gameTime);
         }

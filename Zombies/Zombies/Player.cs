@@ -9,15 +9,16 @@ namespace Zombies
 {
     public class Player : GameObject
     {
-        const float MAX_SPEED_X = 5.5f;
+        const float MAX_SPEED_X = 7f;
         const float MAX_SPEED_Y = 20f;
 
-        const float JUMP_SPEED = MAX_SPEED_Y;
+        const float JUMP_SPEED = MAX_SPEED_Y - 5f;
 
         const int SIZE_X = 30;
         const int SIZE_Y = 50;
 
         public bool CanJump = false;
+        public bool IsAlive = true;
 
         public Player(World world, Vector2 position)
             : base(world, position, new Vector2(MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), true, true)
@@ -28,8 +29,10 @@ namespace Zombies
         public override void Update()
         {
             // preventing jumping when player falls off of ledge
-            if (Velocity.Y <= 2f)
+            if (Velocity.Y >= 2f)
                 CanJump = false;
+
+            // basic actions are firing gun and jumping
             if (Input.ScreenTapped)
             {
                 if (Input.TapPosition.X <= World.PLAYER_CAMERA_OFFSET && CanJump)
@@ -38,13 +41,17 @@ namespace Zombies
                     FireGun(Input.TapPosition);
             }
 
+            // kill player if they fall off-screen
+            if (Top > Engine.ScreenResolution.Y)
+                Die();
+
             base.Update();
         }
 
 
         private void DoJump()
         {
-            this.Velocity.Y = -MAX_SPEED_Y;
+            this.Velocity.Y = -JUMP_SPEED;
             CanJump = false;
         }
 
@@ -63,6 +70,13 @@ namespace Zombies
         public override void Draw(SpriteBatch spr)
         {
             base.Draw(spr);
+        }
+
+        public void Die()
+        {
+            // TODO: Death animation stuff.
+            world.Player = null;
+            world.GameOver();
         }
     }
 }

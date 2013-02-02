@@ -23,6 +23,8 @@ namespace Zombies
         public BufferedList<Block> Blocks = new BufferedList<Block>();
         public BufferedList<Zombie> Zombies = new BufferedList<Zombie>();
 
+        public bool Failed;
+
         int width, height;
         public int Width
         {
@@ -36,13 +38,13 @@ namespace Zombies
         public World(int width, int height)
         {
             Player = new Player(this, new Vector2(50, 50));
-
             this.width = width;
             this.height = height;
+            Failed = false;
 
             // TODO: replace this with random block generation
             for (int i = 0; i < 8; i++)
-                Blocks.Add(new Block(this, new Vector2(i * 225, Engine.ScreenResolution.Y - 50), new Vector2(200, 50)));
+                Blocks.Add(new Block(this, new Vector2(i * 250, Engine.ScreenResolution.Y - 50), new Vector2(200, 50)));
 
             //camera = new Camera(Player, Width, Height, DEFAULT_ZOOM_LEVEL);
         }
@@ -54,8 +56,13 @@ namespace Zombies
             foreach (Zombie zombie in Zombies)
                 zombie.Update();
 
-            Player.Update();
-            Camera = new Vector2(Math.Max(Player.Position.X - PLAYER_CAMERA_OFFSET, 0), Engine.ScreenResolution.Y / 2);
+            if (!Failed)
+            {
+                Camera = new Vector2(Math.Max(Player.Position.X - PLAYER_CAMERA_OFFSET, 0), Engine.ScreenResolution.Y / 2);
+                Player.Update();
+            } 
+            else if (Input.ScreenTapped)
+                Engine.ShouldReset = true;
 
             //camera.Update(this);
         }
@@ -70,8 +77,15 @@ namespace Zombies
             foreach (Zombie zombie in Zombies)
                 zombie.Draw(spr);
 
-            Player.Draw(spr);
+            if (!Failed)
+                Player.Draw(spr);
             spr.End();
+        }
+
+        public void GameOver()
+        {
+            // TODO: Write game over.
+            Failed = true;
         }
     }
 }
