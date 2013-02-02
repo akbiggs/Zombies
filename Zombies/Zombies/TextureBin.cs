@@ -10,7 +10,7 @@ namespace Zombies
     public static class TextureBin
     {
         static Dictionary<String, Texture2D> texDic = new Dictionary<string, Texture2D>();
-        static List<String> names = new List<string> { };
+        static List<String> names = new List<string> { "Pixel" };
 
         public static void LoadContent(ContentManager cm)
         {

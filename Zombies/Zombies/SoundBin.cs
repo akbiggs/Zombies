@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zombies
 {
@@ -14,10 +16,10 @@ namespace Zombies
         public static void LoadSounds(ContentManager c)
         {
             //Load(c, "jump");
-            Load(c, "hurt");
-            Load(c, "laser");
-            Load(c, "death");
-            LoadSong(c, "gods");
+            //Load(c, "hurt");
+            //Load(c, "laser");
+            //Load(c, "death");
+            //LoadSong(c, "gods");
             //LoadSong(c, "main");
         }
 

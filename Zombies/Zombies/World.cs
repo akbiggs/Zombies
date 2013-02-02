@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zombies
 {
@@ -11,6 +12,8 @@ namespace Zombies
         #region Constants
         float DEFAULT_ZOOM_LEVEL = 1f;
         #endregion
+
+        public float Gravity = 0.75f;
 
         protected Camera camera;
 
@@ -30,7 +33,7 @@ namespace Zombies
 
         public World(int width, int height)
         {
-            Player = new Player(new Vector2(50, 50));
+            Player = new Player(this, new Vector2(50, 50));
 
             this.width = width;
             this.height = height;
@@ -52,6 +55,18 @@ namespace Zombies
             Player.Update();
 
             camera.Update(this);
+        }
+
+        public virtual void Draw(SpriteBatch spr)
+        {
+            spr.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.GetTransformation(spr.GraphicsDevice));
+            foreach (Block block in Blocks)
+                block.Draw(spr);
+            foreach (Zombie zombie in Zombies)
+                zombie.Draw(spr);
+
+            Player.Draw(spr);
+            spr.End();
         }
     }
 }

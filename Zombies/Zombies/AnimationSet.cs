@@ -19,7 +19,6 @@ namespace Zombies
             get { return animationFrame; }
         }
 
-        List<BBox> frameBoxes; 
 
         public readonly String Name;
         Texture2D texture;
@@ -40,7 +39,7 @@ namespace Zombies
         /// <param name="frameDuration">How long each frame should last for.</param>
         /// <param name="shouldLoop">Whether or not the animation should loop.</param>
         /// <param name="startFrame">The starting frame of the animation.</param>
-        public AnimationSet(String name, Texture2D texture, int frames, int frameWidth, int frameDuration, bool shouldLoop=true, int startFrame=0)
+        public AnimationSet(String name, Texture2D texture, int frames, int frameWidth, int frameDuration, bool shouldLoop, int startFrame)
         {
             Name = name;
             this.texture = texture;

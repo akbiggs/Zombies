@@ -65,7 +65,7 @@ namespace Zombies
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ScreenResolution = new Point(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
             TextureBin.LoadContent(Content);
-            SoundBin.LoadContent(Content);
+            SoundBin.LoadSounds(Content);
 
             world = new World(ScreenResolution.X, ScreenResolution.Y);
         }

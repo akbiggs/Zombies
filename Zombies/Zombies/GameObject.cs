@@ -40,7 +40,29 @@ namespace Zombies
         public Rectangle BoundingBox { get { return new Rectangle((int)this.Left, (int)this.Top, (int)this.Size.X, (int)this.Size.Y); } }
 
         /// <summary>
-        /// Makes a new object.
+        /// Makes a new animated object.
+        /// </summary>
+        /// <param name="world"></param>
+        /// <param name="position"></param>
+        /// <param name="velocity"></param>
+        /// <param name="size"></param>
+        /// <param name="animations">All the animations of the object.</param>
+        /// <param name="startAnimation">The name of the first animation to play of this object.</param>
+        /// <param name="gravitable"></param>
+        public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, List<AnimationSet> animations, String startAnimation,
+            bool gravitable)
+        {
+            this.world = world;
+            this.Position = position;
+            this.Velocity = velocity;
+            this.Size = size;
+            this.gravitable = gravitable;
+            this.Animations = animations;
+            this.CurAnimation = GetAnimationByName(startAnimation);
+        }
+
+        /// <summary>
+        /// Makes a new unanimated object.
         /// </summary>
         /// <param name="world">The world in which the object exists.</param>
         /// <param name="position">The position of the object.</param>
@@ -48,19 +70,17 @@ namespace Zombies
         /// <param name="size">The size of the object.</param>
         /// <param name="texture">The texture of the object.</param>
         public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, Texture2D texture, bool gravitable)
+            : this(world, position, velocity, size, new List<AnimationSet>
+            {
+                new AnimationSet("_", texture, 1, texture.Width, 1, false, 0)
+            }, "_", gravitable)
         {
-            this.world = world;
-            this.Position = position;
-            this.Velocity = velocity;
-            this.Size = size;
-            this.Texture = texture;
-            this.gravitable = gravitable;
         }
 
         /// <summary>
         /// Updates the state of the object.
         /// The default behaviour for updating a GameObject moves the object with collisions (if set).
-        /// </summary>
+        /// </summary>s
         public virtual void Update()
         {
             this.Move();
@@ -161,7 +181,8 @@ namespace Zombies
         /// <param name="spr">The sprite batch of the game.</param>
         public virtual void Draw(SpriteBatch spr)
         {
-            spr.Draw(Texture, new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y), null, Color, 0, Vector2.Zero, SpriteEffects.None, 0);
+            spr.Draw(CurAnimation.GetTexture(), new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y), CurAnimation.GetFrameRect(),
+                Color, 0, Vector2.Zero, SpriteEffects.None, 0);
         }
 
         /// <summary>
@@ -172,20 +193,20 @@ namespace Zombies
         /// <exception cref="System.InvalidOperationException">Specified animation doesn't exist.</exception>
         protected virtual void ChangeAnimation(string name)
         {
-            if (!curAnimation.IsCalled(name))
+            if (!CurAnimation.IsCalled(name))
             {
                 AnimationSet newAnimation = GetAnimationByName(name);
                 if (newAnimation == null)
                     throw new InvalidOperationException("Specified animation doesn't exist.");
                 newAnimation.Reset();
                 newAnimation.Update();
-                curAnimation = newAnimation;
+                CurAnimation = newAnimation;
             }
         }
 
         private AnimationSet GetAnimationByName(string name)
         {
-            return animations.Find(animset => animset.IsCalled(name));
+            return Animations.First(animset => animset.IsCalled(name));
         }
     }
 }

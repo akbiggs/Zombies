@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Zombies
 {
@@ -132,7 +133,7 @@ namespace Zombies
         /// <param name="balanceAmount">How much to balance it by. Valid values are 0 to 1.</param>
         /// <returns>The vector balanced out to have its x-component lerped towards its y-component if the
         /// y-component is larger, otherwise the y-component lerped towards its x-component.</returns>
-        public static Vector2 Balance(this Vector2 vector, float balanceAmount = DEFAULT_BALANCE)
+        public static Vector2 Balance(this Vector2 vector, float balanceAmount)
         {
             Debug.Assert(0 <= balanceAmount && balanceAmount <= 1, "Can't balance by that amount, expecting a value in range of 0 to 1.");
             Vector2 balancedVector = vector;

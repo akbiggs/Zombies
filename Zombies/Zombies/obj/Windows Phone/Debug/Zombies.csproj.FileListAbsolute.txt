@@ -1,1 +1,12 @@
 c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.dll
+c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.pdb
+c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Zombies.dll
+c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\Zombies.pdb
+c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\AppManifest.xaml
+c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\WMAppManifest.xml.g
+c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\
+c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Zombies.xap
+c:\users\bill\code\Zombies\Zombies\Zombies\obj\Windows Phone\Debug\XapCacheFile.xml
+c:\users\bill\code\Zombies\Zombies\Zombies\bin\Windows Phone\Debug\Content\Pixel.xnb
