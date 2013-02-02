@@ -11,6 +11,8 @@ namespace Zombies
         const int SIZE_X = 48;
         const int SIZE_Y = 18;
 
+        const int HEALTH = 1;
+
         const int DELAY_BEFORE_RUSH = 30;
 
         const float RUSH_SPEED = 7f;
@@ -23,7 +25,7 @@ namespace Zombies
         int swirlRotation = 0;
 
         public Vampire(World world, Vector2 position, EnemyPattern pattern)
-            : base(world, position, Vector2.Zero, new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), false, false)
+            : base(world, position, Vector2.Zero, new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), false, false, HEALTH)
         {
             attackPattern = pattern;
             if (position.Y < world.Player.Position.Y) 
@@ -55,7 +57,10 @@ namespace Zombies
                 default:
                     throw new InvalidOperationException("Invalid vampire attack pattern specified.");
             }
+
             base.Update();
+            if (Health <= 0)
+                world.Vampires.BufferRemove(this);
         }
     }
 }

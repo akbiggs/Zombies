@@ -52,7 +52,7 @@ namespace Zombies
         /// <param name="startAnimation">The name of the first animation to play of this object.</param>
         /// <param name="gravitable"></param>
         public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, List<AnimationSet> animations, String startAnimation,
-            bool gravitable, bool collidesWithTerrain)
+            bool gravitable, bool collidesWithTerrain, int health)
         {
             this.world = world;
             this.Position = position;
@@ -62,6 +62,7 @@ namespace Zombies
             this.Animations = animations;
             this.CurAnimation = GetAnimationByName(startAnimation);
             this.CollidesWithTerrain = collidesWithTerrain;
+            this.Health = health;
         }
 
         /// <summary>
@@ -72,11 +73,12 @@ namespace Zombies
         /// <param name="velocity">The velocity at which the object is moving initially.</param>
         /// <param name="size">The size of the object.</param>
         /// <param name="texture">The texture of the object.</param>
-        public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, Texture2D texture, bool gravitable, bool collidesWithTerrain)
+        public GameObject(World world, Vector2 position, Vector2 velocity, Vector2 size, Texture2D texture, bool gravitable, bool collidesWithTerrain,
+            int health)
             : this(world, position, velocity, size, new List<AnimationSet>
             {
                 new AnimationSet("_", texture, 1, texture.Width, 1, false, 0)
-            }, "_", gravitable, collidesWithTerrain)
+            }, "_", gravitable, collidesWithTerrain, health)
         {
         }
 
@@ -190,7 +192,7 @@ namespace Zombies
 
         public virtual void Damage(int amount)
         {
-
+            Health -= amount;
         }
 
         /// <summary>

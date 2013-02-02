@@ -9,7 +9,7 @@ namespace Zombies
     public class Block : GameObject
     {
         public Block(World world, Vector2 position, Vector2 size)
-            : base(world, position, Vector2.Zero, size, TextureBin.Get("Pixel"), false, false)
+            : base(world, position, Vector2.Zero, size, TextureBin.Get("Pixel"), false, false, 99)
         {
 
         }

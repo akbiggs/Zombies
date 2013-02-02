@@ -12,6 +12,7 @@ namespace Zombies
         const float MAX_SPEED_X = 7f;
         const float MAX_SPEED_Y = 20f;
 
+        const int HEALTH = 3;
         const float JUMP_SPEED = MAX_SPEED_Y - 5f;
 
         const int SIZE_X = 30;
@@ -21,7 +22,7 @@ namespace Zombies
         public bool IsAlive = true;
 
         public Player(World world, Vector2 position)
-            : base(world, position, new Vector2(MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), true, true)
+            : base(world, position, new Vector2(MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), true, true, HEALTH)
         {
 
         }
@@ -35,14 +36,20 @@ namespace Zombies
             // basic actions are firing gun and jumping
             if (Input.ScreenTapped)
             {
-                if (Input.TapPosition.X <= World.PLAYER_CAMERA_OFFSET && CanJump)
-                    DoJump();
+                if (Input.TapPosition.X <= World.PLAYER_CAMERA_OFFSET)
+                {
+                    if (CanJump)
+                        DoJump();
+                }
                 else
                     FireGun(Input.TapPosition);
             }
 
             // kill player if they fall off-screen or get hit by a zombie
             if (Top > Engine.ScreenResolution.Y || world.Mobs.Any((mob) => this.Intersects(mob)))
+                Damage(1);
+
+            if (Health <= 0)
                 Die();
 
             base.Update();

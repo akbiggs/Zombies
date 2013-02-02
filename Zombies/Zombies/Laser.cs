@@ -36,7 +36,7 @@ namespace Zombies
         private bool alreadyChecked = false;
 
         public Laser(World world, Vector2 position, Vector2 direction)
-            : base(world, position, direction, new Vector2(1, 1), TextureBin.Get("Pixel"), false, false)
+            : base(world, position, direction, new Vector2(1, 1), TextureBin.Get("Pixel"), false, false, 99)
         {
             this.Direction = direction;
             this.Velocity = world.Player.Velocity + direction * LASER_SPEED;
@@ -102,9 +102,9 @@ namespace Zombies
             //    prim.AddVertex(collisionEndPoints[1], Color.Red);
             //    prim.AddVertex(world.Player.Center, Color.Red);
             //}
-            prim.AddVertex(endPoints[0], Pencil);
-            prim.AddVertex(endPoints[1], Pencil);
-            prim.AddVertex(world.Player.Center, Pencil);
+            prim.AddVertex(new Vector2(endPoints[0].X - world.Camera.X, endPoints[0].Y), Pencil);
+            prim.AddVertex(new Vector2(endPoints[1].X - world.Camera.X, endPoints[1].Y), Pencil);
+            prim.AddVertex(new Vector2(world.Player.Center.X - world.Camera.X, world.Player.Center.Y), Pencil);
             prim.End();
         }
 
