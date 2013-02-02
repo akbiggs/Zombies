@@ -14,7 +14,7 @@ namespace Zombies
         public Zombie(World world, Vector2 position)
             : base(world, position, new Vector2(-MAX_SPEED_X, 0), new Vector2(SIZE_X, SIZE_Y), TextureBin.Get("Pixel"), true, true)
         {
-
+            Color = Color.Red;
         }
     }
 }

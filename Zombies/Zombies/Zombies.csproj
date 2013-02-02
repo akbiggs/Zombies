@@ -73,6 +73,7 @@
     <Compile Include="Support\Input.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\ListHelper.cs" />
     <Compile Include="Support\SoundBin.cs" />
     <Compile Include="Support\TextureBin.cs" />
     <Compile Include="Support\VectorHelper.cs" />

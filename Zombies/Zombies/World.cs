@@ -43,8 +43,9 @@ namespace Zombies
             Failed = false;
 
             // TODO: replace this with random block generation
-            for (int i = 0; i < 8; i++)
-                Blocks.Add(new Block(this, new Vector2(i * 250, Engine.ScreenResolution.Y - 50), new Vector2(200, 50)));
+            Blocks.Add(new Block(this, new Vector2(0, Engine.ScreenResolution.Y - 50), new Vector2(2000, 50)));
+            for (int i = 0; i < 5; i++)
+                Zombies.Add(new Zombie(this, new Vector2(500 + i * 100, Engine.ScreenResolution.Y - 120)));
 
             //camera = new Camera(Player, Width, Height, DEFAULT_ZOOM_LEVEL);
         }

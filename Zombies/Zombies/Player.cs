@@ -9,7 +9,7 @@ namespace Zombies
 {
     public class Player : GameObject
     {
-        const float MAX_SPEED_X = 7f;
+        const float MAX_SPEED_X = 0f;
         const float MAX_SPEED_Y = 20f;
 
         const float JUMP_SPEED = MAX_SPEED_Y - 5f;
@@ -41,8 +41,8 @@ namespace Zombies
                     FireGun(Input.TapPosition);
             }
 
-            // kill player if they fall off-screen
-            if (Top > Engine.ScreenResolution.Y)
+            // kill player if they fall off-screen or get hit by a zombie
+            if (Top > Engine.ScreenResolution.Y || world.Zombies.Any((zombie) => this.Intersects(zombie)))
                 Die();
 
             base.Update();
